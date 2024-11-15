@@ -7,7 +7,7 @@ class TermostatoDisplay extends Dispositivo {
     
     @Override
     public void update() {
-        super.update();
+        super.update(); // Chiama l'update della classe base "Dispositivo"
         display.update(getCoordX(), getCoordY(), getIsAcceso());
     }
 }
