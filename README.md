@@ -19,3 +19,37 @@ Requisiti:
   - 'a': accende/spegne il termostato
   - '+': aumenta temperatura target
   - '-': diminuisce temperatura target
+
+## UML
+```mermaid
+classDiagram
+    class Dispositivo {
+        -boolean isAcceso
+        -int coordX
+        -int coordY
+        -PApplet app
+        +getIsAcceso()
+        +setCoordXY(x, y)
+        +getCoordX()
+        +getCoordY()
+        +accendi()
+        +spegni()
+        +update()
+    }
+    
+    class Display {
+        -float tempTarget
+        -PApplet app
+        +aumentaTarget()
+        +diminuisciTarget()
+        +update(x, y, isAcceso)
+    }
+    
+    class TermostatoDisplay {
+        +Display display
+        +update()
+    }
+    
+    Dispositivo <|-- TermostatoDisplay
+    TermostatoDisplay o-- Display
+```
